@@ -1,0 +1,66 @@
+{{ partial "header.html" . }}
+    <div class="container">
+      {{ .Content }}
+    </div>
+    <!-- /.container -->
+    {{ with .Parent }}
+      {{ range .Sections }}
+        {{ if eq . $ }}
+          {{ $.Scratch.Set "found" true }}
+        {{ else }}
+          {{ if $.Scratch.Get "found" }}
+            {{ if not ($.Scratch.Get "next") }}
+              {{/* Set "next" entry as just after the current page. */}}
+              {{ $.Scratch.Set "next" . }}
+            {{ end }}
+          {{ else }}
+            {{/* Update "prev" entry until the current page is found. */}}
+            {{ $.Scratch.Set "prev" . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          {{ with ($.Scratch.Get "prev") }}
+          <div class="card">
+            <div class="card-header">
+              <time class="post-date" datetime="{{ .Date.Format "{{ .Params.modified }}" | safeHTML }}">
+                {{ .Date.Month }} {{ .Date.Day }}, {{ .Date.Year }}
+              </time>
+              by THE OPENBVE PROJECT
+            </div>
+            <div class="card-body">
+              <h2>
+                <a href="{{ .URL }}">
+                  {{ .Title | markdownify }}
+                </a>
+              </h2>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        <div class="col-sm-6">
+          {{ with ($.Scratch.Get "next") }}
+          <div class="card">
+            <div class="card-header">
+              <time class="post-date" datetime="{{ .Date.Format "{{ .Params.modified }}" | safeHTML }}">
+                {{ .Date.Month }} {{ .Date.Day }}, {{ .Date.Year }}
+              </time>
+              by THE OPENBVE PROJECT
+            </div>
+            <div class="card-body">
+              <h2>
+                <a href="{{ .URL }}">
+                  {{ .Title | markdownify }}
+                </a>
+              </h2>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+{{ partial "footer.html" . }}

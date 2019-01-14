@@ -1,0 +1,48 @@
+---
+title: "Other Useful Resources"
+linktitle: "Other Resources"
+weight: 4
+layout: "single"
+---
+
+Many third parties have created tools and other resources for developing **openBVE** addons. A brief list of these is below:
+
+**Note:** Please see the respective pages for any licence conditions.
+
+## Track and Railway Structures:
+
+### TrackGen
+
+TrackGen creates smoothly curved track (including pointwork), platforms and bridges.
+
+<img src="/images/tools/trackgen.jpg" class="img-fluid" alt="TrackGen Screenshot">
+
+<http://www.bvecornwall.co.uk/wordpress/trackgen/>
+
+## Scenery
+
+### Forest Builder
+
+Forest Builder generates forests, carparks etc.
+
+<http://www.bveklub.hu/forestbuilder/>
+
+## Object Resources
+
+### BVE Klub Object Library
+
+Various objects, including Hungarian trains, and more general scenery items.
+
+<http://bveklub.hu/objektumtar/>
+
+### BVE Cornwall Objects
+
+Assorted British rolling stock, buildings and cars.
+
+<http://www.bvecornwall.co.uk/wordpress/objects/>
+
+### Freebies'
+
+Assorted road traffic
+
+<http://www.bve-terminus.org/freebies/>

@@ -1,0 +1,3 @@
+{{ $v := replace .Inner "<table>" "<table class='table table-hover'>" }}
+{{ $v = replace $v "<thead>" "<thead class='thead-light'>" }}
+{{ replace $v "<th>" "<th scope='col'>" | markdownify }}
