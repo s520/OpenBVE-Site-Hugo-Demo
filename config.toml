@@ -13,11 +13,116 @@ disableKinds = ["page", "404", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
   hrefTargetBlank = true
   extensions = ["laxHtmlBlocks"]
 
+[[menu.header]]
+  name = "Download"
+  weight = 2
+
+[[menu.header]]
+  parent = "Download"
+  name = "Download openBVE"
+  url = "/download/download_openbve.html"
+  weight = 1
+
+[[menu.header]]
+  parent = "Download"
+  name = "Source Code"
+  url = "/download/source_code.html"
+  weight = 2
+
+[[menu.header]]
+  parent = "Download"
+  name = "Extra Files"
+  url = "/download/extra_files.html"
+  weight = 3
+
+[[menu.header]]
+  name = "Install"
+  weight = 3
+
+[[menu.header]]
+  parent = "Install"
+  name = "Installing openBVE"
+  url = "/install/installing_openbve.html"
+  weight = 1
+
+[[menu.header]]
+  parent = "Install"
+  name = "Installing Addons"
+  url = "/install/installing_addons.html"
+  weight = 2
+
+[[menu.header]]
+  name = "Play"
+  weight = 4
+
+[[menu.header]]
+  parent = "Play"
+  name = "Basic Controls"
+  url = "/play/basic_controls.html"
+  weight = 1
+
+[[menu.header]]
+  parent = "Play"
+  name = "Japanese Signals and Signs"
+  url = "/play/japanese_signals_and_signs.html"
+  weight = 2
+
+[[menu.header]]
+  parent = "Play"
+  name = "British Signals and Signs"
+  url = "/play/british_signals_and_signs.html"
+  weight = 3
+
+[[menu.header]]
+  parent = "Play"
+  name = "Desktop Cab Controllers"
+  url = "/play/desktop_cab_controllers.html"
+  weight = 4
+
+[[menu.header]]
+  name = "Developing Addons"
+  weight = 5
+
+[[menu.header]]
+  parent = "Developing Addons"
+  name = "Basic Setup"
+  url = "/developing_addons/basic_setup.html"
+  weight = 1
+
+[[menu.header]]
+  parent = "Developing Addons"
+  name = "Developer Documentation"
+  url = "/developing_addons/developer_documentation.html"
+  weight = 2
+
+[[menu.header]]
+  parent = "Developing Addons"
+  name = "openBVE Packages"
+  url = "/developing_addons/openbve_packages.html"
+  weight = 3
+
+[[menu.header]]
+  parent = "Developing Addons"
+  name = "Other Resources"
+  url = "/developing_addons/other_resources.html"
+  weight = 4
+
+[[menu.header]]
+  name = "Roadmap"
+  url = "/roadmap.html"
+  weight = 6
+
+[[menu.header]]
+  name = "Discussion Board"
+  url = "http://bveworldwide.forumotion.com/f14-the-sim-in-time-general-discussion"
+  weight = 7
+
 [languages]
 [languages.en]
 contentDir = "content/en"
 languageName = "English"
 weight = 1
+
 [languages.ja]
 contentDir = "content/ja"
 languageName = "日本語"

@@ -1,5 +1,5 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="{{.Site.BaseURL}}">
+      <a class="navbar-brand" href="{{ .Site.BaseURL }}">
         <img src="{{ .Site.BaseURL }}/images/logo.png" class="d-inline-block align-top" alt="" height="30" width="30">
         openBVE
       </a>
@@ -9,47 +9,33 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{.Site.BaseURL}}">
+            <a class="nav-link" href="{{ .Site.BaseURL }}">
               Home<span class="sr-only">(current)</span>
             </a>
           </li>
-{{ range .Site.Sections }}
-  {{ if ne .Params.hidden true }}
-    {{ if ne (len .Content) 0 }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{.URL}}">
-              {{ .LinkTitle | markdownify }}
-            </a>
-          </li>
-    {{ else }}
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.header }}
+        {{ if .HasChildren }}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ .LinkTitle | markdownify }}
+              {{ .Name }}
             </a>
-      {{ if .Sections }}
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        {{ range .Sections }}
-          {{ if ne .Params.hidden true }}
-            {{ if ne (len .Content) 0 }}
-              <a class="dropdown-item" href="{{.URL}}">
-            {{ else }}
-              <a class="dropdown-item" href="#">
-            {{ end }}
-                {{ .LinkTitle | markdownify }}
+              {{ range .Children }}
+              <a class="dropdown-item" href="{{ .URL | absLangURL }}">
+                {{ .Name }}
               </a>
-          {{ end }}
-        {{ end }}
+              {{ end }}
             </div>
-      {{ end }}
           </li>
-    {{ end }}
-  {{ end }}
-{{ end }}
+        {{ else }}
           <li class="nav-item">
-            <a class="nav-link" href="http://bveworldwide.forumotion.com/f14-the-sim-in-time-general-discussion">
-              Discussion Board
+            <a class="nav-link" href="{{ .URL | absLangURL }}">
+              {{ .Name }}
             </a>
           </li>
+        {{ end }}
+      {{ end }}
           {{ partial "language.html" . }}
         </ul>
         <form class="form-inline my-2 my-lg-0">
