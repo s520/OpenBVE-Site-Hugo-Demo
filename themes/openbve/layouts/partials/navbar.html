@@ -22,7 +22,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | absLangURL }}">
+              <a class="dropdown-item" href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
               {{ end }}
