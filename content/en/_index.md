@@ -14,6 +14,6 @@ Compared to other simulators of the genre, especially compared to commercial gam
 
 ## Latest Stable Release:
 
-<a href="{{< ref "/download/download_openbve/_index.md" >}}" class="btn btn-outline-success">1.5.4.1 Stable (2019-01-03)</a>
+<a href="{{< ref "/download/download_openbve/_index.md" >}}" class="btn btn-outline-success">{{< version_info >}}</a>
 
 ## Current News & Updates:

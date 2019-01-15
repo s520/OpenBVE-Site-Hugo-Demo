@@ -1,8 +1,10 @@
         <div class="card">
           <div class="card-header">
-            <time class="post-date" datetime="{{ .Date.Format "{{ .Params.modified }}" | safeHTML }}">
-              {{ .Date.Month }} {{ .Date.Day }}, {{ .Date.Year }}
+            {{ with .Params.modified }}
+            <time class="post-date" datetime="{{ . | dateFormat "2006-01-02" | safeHTML }}">
+              {{ . | dateFormat "January 2, 2006" }}
             </time>
+            {{ end }}
             by THE OPENBVE PROJECT
           </div>
           <div class="card-body">

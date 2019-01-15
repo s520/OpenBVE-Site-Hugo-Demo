@@ -1,0 +1,5 @@
+{{ $urlPre := "https://api.github.com" }}
+{{ $releaseJ := getJSON $urlPre "/repos/leezer3/OpenBVE/releases" }}
+{{ range first 1 (where $releaseJ ".prerelease" false) }}
+<time class="publish-date" datetime="{{ .published_at | safeHTML }}">{{ print .tag_name }} Stable ({{ .published_at | dateFormat "2006-01-02" | print }})</time>
+{{ end }}

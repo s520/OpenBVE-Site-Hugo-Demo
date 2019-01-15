@@ -1,0 +1,5 @@
+{{ $urlPre := "https://api.github.com" }}
+{{ $releaseJ := getJSON $urlPre "/repos/leezer3/OpenBVE/releases" }}
+{{ range first 1 (where $releaseJ ".prerelease" false) }}
+{{ print .tag_name }}
+{{ end }}
