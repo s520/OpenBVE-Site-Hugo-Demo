@@ -1,5 +1,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+      {{ $currentPage := . }}
+      {{ range first 1 .Site.Menus.header }}
+      <a class="navbar-brand" href="{{ .URL | relLangURL }}">
+      {{ end }}
         <img src="{{ .Site.BaseURL }}/images/logo.png" class="d-inline-block align-top" alt="" height="30" width="30">
         openBVE
       </a>
@@ -9,13 +12,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ .Site.BaseURL }}">
+      {{ range first 1 .Site.Menus.header }}
+            <a class="nav-link" href="{{ .URL | relLangURL }}">
+      {{ end }}
               Home<span class="sr-only">(current)</span>
             </a>
           </li>
-      {{ $currentPage := . }}
       {{ range .Site.Menus.header }}
-        {{ if .HasChildren }}
+        {{ if ne .Name "Home" }}
+          {{ if .HasChildren }}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ .Name }}
@@ -28,12 +33,13 @@
               {{ end }}
             </div>
           </li>
-        {{ else }}
+          {{ else }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | absLangURL }}">
+            <a class="nav-link" href="{{ .URL | relLangURL }}">
               {{ .Name }}
             </a>
           </li>
+          {{ end }}
         {{ end }}
       {{ end }}
           {{ partial "language.html" . }}

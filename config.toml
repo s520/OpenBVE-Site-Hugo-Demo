@@ -14,6 +14,11 @@ disableKinds = ["page", "404", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
   extensions = ["laxHtmlBlocks"]
 
 [[menu.header]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.header]]
   name = "Download"
   weight = 2
 
