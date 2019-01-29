@@ -5,7 +5,8 @@
     <!-- /.container -->
     <div class="container">
       <div class="card-columns" style="column-count: 1;">
-      {{ $paginator := .Paginate (where .Site.Pages "Section" "posts") 5 }}
+      {{ $v := where .Site.Pages "Section" "posts" }}
+      {{ $paginator := .Paginate (where $v "Title" "!=" "Posts") 5 }}
       {{ range $paginator.Pages }}
         {{ .Render "list" }}
       {{ end }}
